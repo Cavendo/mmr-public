@@ -292,7 +292,7 @@ module.exports = function (grunt) {
       },
       all: [
         'Gruntfile.js',
-        '<%= yeoman.app %>/assets/js/**/*.js',
+        '<%= yeoman.app %>/assets/js/main.js',
         'test/spec/**/*.js'
       ]
     },
@@ -303,7 +303,7 @@ module.exports = function (grunt) {
       check: {
         src: [
           '<%= yeoman.app %>/assets/css/**/*.css',
-          '<%= yeoman.app %>/assets/_scss/**/*.scss'
+          // '<%= yeoman.app %>/assets/_scss/**/*.scss'
         ]
       }
     },
