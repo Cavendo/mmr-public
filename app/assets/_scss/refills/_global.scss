@@ -1,0 +1,67 @@
+// Layouts
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  @include outer-container;
+  max-width: 65em;
+  padding: 0 15px;
+}
+
+
+// Global Header
+// --------------------------
+
+$header-height: 100px;
+
+.global-header {
+  @include clearfix();
+  padding: 30px 0;
+  height: $header-height;
+
+  .header-brand {
+    float: left;
+  }
+
+  .brand-logo {
+    display: block;
+    max-width: 240px;
+  }
+
+  .header-nav {
+    float: right;
+
+    .nav {
+      float: right;
+    }
+
+    .button {
+      @include button-variant(white, darken($brand-pri, 30));
+      // box-shadow: 0 1px 2px rgba(0,0,0,.15);
+    }
+
+  }
+}
+
+.global-footer {
+  background: darken($brand-pri, 30);
+  color: white;
+  padding: 2em 0 4em;
+  font-family: $sans-serif;
+
+  a {
+    color: white;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.footer-copy {
+  font-size: $base-font-size-small;
+  text-align: center;
+}

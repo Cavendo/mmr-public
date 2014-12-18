@@ -3,7 +3,7 @@
 # 2. config.build.yml
 # 3. config.yml
 
-name: mymediaroom.com
+name: MyMediaRoom
 description: MyMediaRoom public site.
 author:
   name: Marty Thierry

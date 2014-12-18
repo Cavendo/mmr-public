@@ -13,8 +13,14 @@ input[type="submit"] {
   @extend %button;
 }
 
+.button-small {
+  font-size: $base-font-size-small;
+  padding: .75em .75em;
+}
+
 .button-large {
-  padding: 1.25em 3em;
+  padding: 1em 1.5;
+  font-size: 1.15em;
 }
 
 .button-full {

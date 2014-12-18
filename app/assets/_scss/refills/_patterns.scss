@@ -1,8 +1,119 @@
 // Patterns - in alphabetical order
 
 
+// Bullets
+// --------------------------
+
+.bullet {
+  text-align: center;
+  margin-bottom: 3em;
+}
+
+.bullet-icon {
+  @include clearfix();
+  width: 90px;
+  height: 90px;
+  line-height: 2;
+  text-align: center;
+  border: 2px solid lighten($brand-pri, 25);
+  border-radius: 50%;
+  vertical-align: middle;
+  font-size: 3em;
+  margin: 0 auto .5em;
+  color: $brand-pri
+}
+
+.bullet-title {
+  color: $brand-pri;
+  text-transform: uppercase;
+  margin: .25em 0;
+}
+
+.bullet-content {}
+
+
+
 // Hero Unit
 // --------------------------
+.hero {
+  color: white;
+  margin-top: -($header-height);
+  padding-top: $header-height + 50;
+  padding-bottom: 5%;
+  position: relative;
+}
+
+.hero-bg {
+  @include position(absolute, 0 0 0 0);
+  background-image: url(../img/hero-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+
+  &:before {
+    @include position(absolute, 0 0 0 0);
+    content: '';
+    background: fade-out(darken($brand-pri, 25), .1);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.hero-intro {
+  text-shadow: 0 1px 0 rgba(0,0,0,.45);
+  margin-bottom: 1em;
+  font-size: 1.1em;
+  margin-top: 1em;
+
+  .headline {
+    margin-bottom: .5em;
+    letter-spacing: -1px;
+  }
+
+}
+
+.hero-form {
+
+  .signup-form {
+    background: white;
+  }
+
+  .form-title {
+    color: $brand-pri;
+    text-align: center;
+    margin-bottom: .5em;
+    text-transform: uppercase;
+  }
+
+}
+
+@media screen and (min-width: 960px ) {
+  .hero-intro {
+    @include span-columns(7);
+    font-size: 1.5em;
+
+    .headline {
+      line-height: 1;
+    }
+  }
+
+  .hero-form {
+    @include span-columns(5);
+    @include omega();
+    padding-left: 30px;
+  }
+}
+
+// Adjust hero to to overlap .global-header on homepage
+.home {
+  .global-header {
+    position: relative;
+    z-index: 100;
+  }
+}
+
 
 
 
@@ -20,14 +131,9 @@
 
 .grid-span-4 .grid-item {
 
-  @include media($tablet) {
+  @include media($min-tablet) {
     @include span-columns(6);
     @include omega(2n);
-  }
-
-  @include media($desktop) {
-    @include span-columns(3);
-    @include omega(4n);
   }
 
 }
@@ -35,8 +141,14 @@
 .grid-span-3 .grid-item{
 
   @include media($min-tablet) {
-    @include span-columns(4);
-    @include omega(3n);
+    @include span-columns(6);
+    @include omega(2n);
+  }
+
+  &:nth-child(3n) {
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
   }
 
 }
@@ -97,39 +209,6 @@
 
 
 
-// Bullets
-// --------------------------
-
-.bullet {
-  text-align: center;
-  margin-bottom: 2em;
-}
-
-.bullet-icon {
-  @include clearfix();
-  width: 62px;
-  height: 62px;
-  line-height: 2;
-  text-align: center;
-  border: 2px solid lighten($teal, 25);
-  border-radius: 50%;
-  vertical-align: middle;
-  font-size: 2em;
-  margin: 0 auto .5em;
-  color: $teal
-}
-
-.bullet-title {
-  color: $teal;
-  font-size: $base-font-size * 1;
-  text-transform: uppercase;
-  margin: .25em 0;
-}
-
-.bullet-content {
-  font-size: $base-font-size-small;
-}
-
 // Navigation
 // --------------------------
 
@@ -139,8 +218,8 @@
 // --------------------------
 
 .page-section {
-  padding-top: 3em;
-  padding-bottom: 3em;
+  padding-top: 4em;
+  padding-bottom: 4em;
 }
 
 .page-section-secondary {
@@ -152,7 +231,7 @@
   margin-bottom: 3em;
 
   .title {
-    color: $orange;
+    color: darken($brand-pri, 15);
     text-align: center;
     letter-spacing: -1px;
 
@@ -166,12 +245,12 @@
   }
 
   @include media($min-tablet) {
-    .title { font-size: $base-font-size * 3; }
+    .title { font-size: $base-font-size * 2.75; }
     .intro { font-size: $base-font-size * 1.15; }
   }
 
   @include media($desktop) {
-    .title { font-size: $base-font-size * 4; }
+    .title { font-size: $base-font-size * 3; }
     .intro { font-size: $base-font-size * 1.25; }
   }
 
@@ -189,20 +268,24 @@
 .signup-form {
   max-width: 480px;
   margin: 0 auto 2em;
+  padding: 1.5em;
 
   label {
     font-family: $sans-serif;
-    color: $teal;
-    text-transform: uppercase;
+    color: lighten($brand-pri, 10);
   }
 
   .form-control {
     background: whitesmoke;
-    border-width: 2px;
+    font-family: $sans-serif;
   }
 
   .form-group {
-    margin-bottom: 1em;
+    margin-bottom: .5em;
+
+    & + .button {
+      margin-top: 1em;
+    }
   }
 
   .button {
@@ -214,27 +297,26 @@
 
 .signup-form-smoke {
   background: darken($smoke-white, 10);
-  padding: 30px;
   margin-top: 2em;
   margin-bottom: 2em;
 
   label {
-    color: $smoke;
+    color: $brand-ter;
     margin: 0;
     padding-bottom: 5px;
     display: block;
   }
 
   .form-control {
-    border-color: lighten($smoke, 20);
+    border-color: lighten($brand-ter, 20);
     background: white;
 
     &:focus {
-      border-color: lighten($smoke, 10);
-      box-shadow: inset 0 1px 3px lighten($smoke, 10), 0 0 5px lighten($smoke, 10);
+      border-color: lighten($brand-ter, 10);
+      box-shadow: inset 0 1px 3px lighten($brand-ter, 10), 0 0 5px lighten($brand-ter, 10);
     }
     &:hover {
-      border-color: lighten($smoke, 10);
+      border-color: lighten($brand-ter, 10);
     }
   }
 }
