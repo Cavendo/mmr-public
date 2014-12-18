@@ -1,6 +1,37 @@
 // Patterns - in alphabetical order
 
 
+// Articles
+// --------------------------
+article {
+  max-width: 40em;
+  margin-left: auto;
+  margin-right: auto;
+
+  h1,h2,h3,h4,h5,h6 {
+    // font-family: $serif;
+  }
+
+  h1,h2,h3 {
+    margin: 1.5em 0 .5em;
+  }
+
+  .article-header {
+    margin-top: 4em;
+    margin-bottom: 2em;
+
+    .title {
+      font-family: $sans-serif;
+      font-weight: 300;
+    }
+  }
+
+  ul { @extend %default-ul; }
+  ol { @extend %default-ol; }
+}
+
+
+
 // Bullets
 // --------------------------
 
@@ -33,87 +64,81 @@
 
 
 
-// Hero Unit
+// Front Header
 // --------------------------
-.hero {
-  color: white;
-  margin-top: -($header-height);
-  padding-top: $header-height + 50;
-  padding-bottom: 5%;
+
+.front-header {
   position: relative;
-}
 
-.hero-bg {
-  @include position(absolute, 0 0 0 0);
-  background-image: url(../img/hero-bg.jpg);
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
-
-  &:before {
+  .header-bg {
     @include position(absolute, 0 0 0 0);
-    content: '';
-    background: fade-out(darken($brand-pri, 25), .1);
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    background-image: url(../img/hero-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+
+    &:before {
+      @include position(absolute, 0 0 0 0);
+      content: '';
+      background: fade-out(darken($brand-pri, 25), .1);
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
   }
 }
 
-.hero-intro {
-  text-shadow: 0 1px 0 rgba(0,0,0,.45);
-  margin-bottom: 1em;
-  font-size: 1.1em;
-  margin-top: 1em;
+.front-hero {
+  @include outer-container;
+  color: white;
+  position: relative;
+  padding: 2em 0;
 
-  .headline {
-    margin-bottom: .5em;
-    letter-spacing: -1px;
-  }
-
-}
-
-.hero-form {
-
-  .signup-form {
-    background: white;
-  }
-
-  .form-title {
-    color: $brand-pri;
-    text-align: center;
-    margin-bottom: .5em;
-    text-transform: uppercase;
-  }
-
-}
-
-@media screen and (min-width: 960px ) {
   .hero-intro {
-    @include span-columns(7);
-    font-size: 1.5em;
+    text-shadow: 0 1px 0 rgba(0,0,0,.45);
+    margin-bottom: 1em;
+    font-size: 1.1em;
+    margin-top: 1em;
 
     .headline {
-      line-height: 1;
+      margin-bottom: .5em;
+      letter-spacing: -1px;
     }
+
   }
 
   .hero-form {
-    @include span-columns(5);
-    @include omega();
-    padding-left: 30px;
+
+    .signup-form {
+      background: white;
+    }
+
+    .form-title {
+      color: $brand-pri;
+      text-align: center;
+      margin-bottom: .5em;
+      text-transform: uppercase;
+    }
+  }
+
+  @media screen and (min-width: 960px ) {
+    .hero-intro {
+      @include span-columns(7);
+      font-size: 1.5em;
+
+      .headline {
+        line-height: 1;
+      }
+    }
+
+    .hero-form {
+      @include span-columns(5);
+      @include omega();
+      padding-left: 30px;
+    }
   }
 }
-
-// Adjust hero to to overlap .global-header on homepage
-.home {
-  .global-header {
-    position: relative;
-    z-index: 100;
-  }
-}
-
 
 
 
@@ -211,7 +236,7 @@
 
 // Navigation
 // --------------------------
-
+.nav {}
 
 
 // Page Sections

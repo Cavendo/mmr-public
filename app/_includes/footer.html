@@ -1,7 +1,13 @@
-<footer class="global-footer" role="contentinfo">
-  <div class="container">
-    <div class="footer-copy">
-      <p>&copy; {{ site.time | date: "%Y" }} {{ site.name }} | <a href="#">Privacy</a></p>
-    </div>
-  </div>
-</footer>
+    <footer class="global-footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-copy">
+          <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }} | <a href="#">Privacy</a></p>
+        </div>
+      </div>
+    </footer>
+
+    {% include scripts.html %}
+    {% include googleanalytics.html %}
+
+  </body>
+</html>

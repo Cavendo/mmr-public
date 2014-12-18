@@ -50,7 +50,7 @@ $brand-ter: $smoke;
 $base-background-color: white;
 
 // Font Colors
-$base-font-color: $brand-ter;
+$base-font-color: darken($brand-ter, 10);
 $base-accent-color: $brand-pri;
 
 // Link Colors

@@ -3,8 +3,9 @@
 # 2. config.build.yml
 # 3. config.yml
 
-name: MyMediaRoom
-description: MyMediaRoom public site.
+name: mymediaroom
+title: MyMediaRoom
+description: Your Online Hub for Sharing PR and Events with the Right Audience
 author:
   name: Marty Thierry
   email: mthierry@cavendo.com
