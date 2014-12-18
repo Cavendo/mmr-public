@@ -1,0 +1,12 @@
+// Layouts
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  @include outer-container;
+  max-width: 65em;
+  padding: 0 15px;
+}

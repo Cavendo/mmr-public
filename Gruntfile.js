@@ -115,7 +115,8 @@ module.exports = function (grunt) {
         httpImagesPath: '/assets/img',
         httpGeneratedImagesPath: '/assets/img/generated',
         outputStyle: 'expanded',
-        raw: 'extensions_dir = "<%= yeoman.app %>/_bower_components"\n'
+        raw: 'extensions_dir = "<%= yeoman.app %>/_bower_components"\n',
+        sourcemap: true
       },
       dist: {
         options: {
@@ -237,6 +238,24 @@ module.exports = function (grunt) {
         }]
       }
     },
+    grunticon: {
+      server: {
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.app %>/assets/svg/',
+          src: ['*.svg'],
+          dest: '.tmp/assets/'
+        }],
+        options: {
+          datapngcss: 'css/icons/data-png.css',
+          datasvgcss: 'css/icons/data-svg.css',
+          urlpngcss: 'css/icons/fallback.css',
+          pngfolder: 'img/icons/png/',
+          pngpath: 'assets/img/icons/png',
+          loadersnippet: 'js/grunticon.loader.js'
+        }
+      }
+    },
     copy: {
       dist: {
         files: [{
@@ -310,6 +329,7 @@ module.exports = function (grunt) {
     concurrent: {
       server: [
         'compass:server',
+        'grunticon:server',
         'copy:stageCss',
         'jekyll:server'
       ],
@@ -333,11 +353,6 @@ module.exports = function (grunt) {
       'connect:livereload',
       'watch'
     ]);
-  });
-
-  grunt.registerTask('server', function () {
-    grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-    grunt.task.run(['serve']);
   });
 
   // No real tests yet. Add your own.

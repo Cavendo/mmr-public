@@ -8,3 +8,15 @@ input[type="submit"] {
   vertical-align: middle;
   white-space: nowrap;
 }
+
+.button {
+  @extend %button;
+}
+
+.button-large {
+  padding: 1.25em 3em;
+}
+
+.button-full {
+  width: 100%;
+}

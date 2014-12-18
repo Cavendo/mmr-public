@@ -14,19 +14,22 @@
     <link rel="stylesheet" href="/assets/css/main.css">
     <!-- endbuild -->
 
-    <!-- build:js(app) assets/js/head-scripts.js -->
+    <!-- build:js(app, .tmp) assets/js/head-scripts.js -->
     <!-- Replace with a custom modernizer build for production -->
     <script src="/_bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
 
+    <link href='http://fonts.googleapis.com/css?family=Bitter:400,400italic|Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
   </head>
   <body class="{{ page.class | slugify }}">
     <!--[if lt IE 8]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    {% include header.html %}
 
-    {{ content }}
+    <main class="main" role="main">{{ content }}</main>
 
+    {% include footer.html %}
     {% include scripts.html %}
     {% include googleanalytics.html %}
 
