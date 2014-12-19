@@ -1,7 +1,15 @@
     <footer class="global-footer" role="contentinfo">
       <div class="container">
+        <div class="footer-social">
+          <ul class="social-links">
+            <li><a href="http://facebook.com/mymediaroom"><i class="icon icon-facebook"></i></a></li>
+            <li><a href="http://twitter.com/mymediaroom"><i class="icon icon-twitter"></i></a></li>
+            <li><a href="https://www.linkedin.com/company/mymediaroom"><i class="icon icon-linkedin"></i></a></li>
+            <!-- <li><a href="#"><i class="icon icon-rss"></i></a></li> -->
+          </ul>
+        </div>
         <div class="footer-copy">
-          <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }} | <a href="#">Privacy</a></p>
+          <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }} | <a href="{{ site.baseurl }}/privacy">Privacy</a></p>
         </div>
       </div>
     </footer>
