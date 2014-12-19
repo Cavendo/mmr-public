@@ -25,3 +25,5 @@ markdown: redcarpet
 #   extensions: ['fenced_code_blocks', 'smart']
 
 pygments: true
+
+base_url: ""

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js">
-  <head>
+  <head><base href="{{ site.base_url }}/">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     {% if page.title == 'Home' %}
@@ -23,7 +23,7 @@
     <script src="/_bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
 
-    <link href='http://fonts.googleapis.com/css?family=Bitter:400,400italic|Open+Sans:300,400italic,400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Bitter:400,400italic|Open+Sans:300,400italic,400,700' rel='stylesheet' type='text/css'>
   </head>
   <body class="{{ page.title | slugify }} {{ page.layout | slugify }}">
     <!--[if lt IE 9]>
