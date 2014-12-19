@@ -241,24 +241,6 @@ module.exports = function (grunt) {
         }]
       }
     },
-    grunticon: {
-      server: {
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>/assets/svg/',
-          src: ['*.svg'],
-          dest: '.tmp/assets/'
-        }],
-        options: {
-          datapngcss: 'css/icons/data-png.css',
-          datasvgcss: 'css/icons/data-svg.css',
-          urlpngcss: 'css/icons/fallback.css',
-          pngfolder: 'img/icons/png/',
-          pngpath: 'assets/img/icons/png',
-          loadersnippet: 'js/grunticon.loader.js'
-        }
-      }
-    },
     copy: {
       dist: {
         files: [{
