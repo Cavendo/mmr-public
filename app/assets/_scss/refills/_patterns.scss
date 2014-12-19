@@ -1,0 +1,376 @@
+// Patterns - in alphabetical order
+
+
+// Articles
+// --------------------------
+article {
+  max-width: 40em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 6em;
+
+  &:after {
+    content: '';
+    display: block;
+    border-bottom: 3px solid darken($smoke-white, 10);
+    width: 50px;
+    padding: 1em 0;
+  }
+
+  h1,h2,h3,h4,h5,h6 {
+    // font-family: $serif;
+  }
+
+  h1,h2,h3 {
+    margin: 1.5em 0 .5em;
+  }
+
+  .article-header {
+    margin-top: 4em;
+    margin-bottom: 3em;
+
+    .title {
+      font-size: 3em;
+      font-family: $sans-serif;
+      font-weight: 300;
+    }
+  }
+
+  ul { @extend %default-ul; }
+  ol { @extend %default-ol; }
+}
+
+
+
+// Bullets
+// --------------------------
+
+.bullet {
+  text-align: center;
+  margin-bottom: 3em;
+}
+
+.bullet-icon {
+  @include clearfix();
+  width: 90px;
+  height: 90px;
+  line-height: 2;
+  text-align: center;
+  border: 2px solid lighten($brand-pri, 25);
+  border-radius: 50%;
+  vertical-align: middle;
+  font-size: 3em;
+  margin: 0 auto .5em;
+  color: $brand-pri
+}
+
+.bullet-title {
+  color: $brand-pri;
+  text-transform: uppercase;
+  margin: .25em 0;
+}
+
+.bullet-content {}
+
+
+
+// Front Header
+// --------------------------
+
+.front-header {
+  position: relative;
+
+  .header-bg {
+    @include position(absolute, 0 0 0 0);
+    background-image: url(../img/hero-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+
+    &:before {
+      @include position(absolute, 0 0 0 0);
+      content: '';
+      background: fade-out(darken($brand-pri, 25), .1);
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+
+.front-hero {
+  @include outer-container;
+  color: white;
+  position: relative;
+  padding: 2em 0;
+
+  .hero-intro {
+    text-shadow: 0 1px 0 rgba(0,0,0,.45);
+    margin-bottom: 1em;
+    font-size: 1.1em;
+    margin-top: 1em;
+
+    .headline {
+      margin-bottom: .5em;
+      letter-spacing: -1px;
+    }
+
+  }
+
+  .hero-form {
+
+    .signup-form {
+      background: white;
+    }
+
+    .form-title {
+      color: $brand-pri;
+      text-align: center;
+      margin-bottom: .5em;
+      text-transform: uppercase;
+    }
+  }
+
+  @media screen and (min-width: 960px ) {
+    .hero-intro {
+      @include span-columns(7);
+      font-size: 1.5em;
+
+      .headline {
+        line-height: 1;
+      }
+    }
+
+    .hero-form {
+      @include span-columns(5);
+      @include omega();
+      padding-left: 30px;
+    }
+  }
+}
+
+
+
+
+// Grid Items
+// --------------------------
+
+.grid-items {
+  @include outer-container;
+
+  .grid-item {
+    margin-bottom: 1em;
+  }
+}
+
+.grid-span-4 .grid-item {
+
+  @include media($min-tablet) {
+    @include span-columns(6);
+    @include omega(2n);
+  }
+
+}
+
+.grid-span-3 .grid-item{
+
+  @include media($min-tablet) {
+    @include span-columns(6);
+    @include omega(2n);
+  }
+
+  &:nth-child(3n) {
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+  }
+
+}
+
+
+
+// Gallery
+// --------------------------
+
+.gallery-grid {
+  @include clearfix();
+}
+
+.gallery-grid-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 0;
+  margin-bottom: 1px;
+  padding-bottom: 50%;
+  float: left;
+  position: relative;
+  width: 100%;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  @include media($min-tablet) {
+    &:before {
+      border-right: 1px solid white;
+    }
+  }
+
+  @include media($tablet) {
+    padding-bottom: 25%;
+    width: (100%/2);
+
+    &:nth-child(2n):before {
+      border-right: 0;
+    }
+  }
+
+  @include media($desktop) {
+    padding-bottom: 25%;
+    width: (100%/3);
+
+    &:nth-child(3n):before {
+      border-right: 0;
+    }
+  }
+}
+
+
+
+// Navigation
+// --------------------------
+.nav {}
+
+
+// Page Sections
+// --------------------------
+
+.page-section {
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+
+.page-section-secondary {
+  background-color: $smoke-white;
+}
+
+.section-header {
+
+  margin-bottom: 3em;
+
+  .title {
+    color: darken($brand-pri, 15);
+    text-align: center;
+    letter-spacing: -1px;
+
+    &:after {
+      border-bottom: 8px solid darken($smoke-white, 10);
+      content: "";
+      display: block;
+      margin: 0.5em auto;
+      width: 80px;
+    }
+  }
+
+  @include media($min-tablet) {
+    .title { font-size: $base-font-size * 2.75; }
+    .intro { font-size: $base-font-size * 1.15; }
+  }
+
+  @include media($desktop) {
+    .title { font-size: $base-font-size * 3; }
+    .intro { font-size: $base-font-size * 1.25; }
+  }
+
+}
+
+.section-button {
+  text-align: center;
+}
+
+
+
+
+// Social Links
+// --------------------------
+.social-links {
+  text-align: center;
+
+  li {
+    display: inline-block;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+
+
+
+
+// Signup Form
+// --------------------------
+
+.signup-form {
+  max-width: 480px;
+  margin: 0 auto 2em;
+  padding: 1.5em;
+
+  label {
+    font-family: $sans-serif;
+    color: lighten($brand-pri, 10);
+  }
+
+  .form-control {
+    background: whitesmoke;
+    font-family: $sans-serif;
+  }
+
+  .form-group {
+    margin-bottom: .5em;
+
+    & + .button {
+      margin-top: 1em;
+    }
+  }
+
+  .button {
+    display: block;
+    margin: auto;
+  }
+
+}
+
+.signup-form-smoke {
+  background: darken($smoke-white, 10);
+  margin-top: 2em;
+  margin-bottom: 2em;
+
+  label {
+    color: $brand-ter;
+    margin: 0;
+    padding-bottom: 5px;
+    display: block;
+  }
+
+  .form-control {
+    border-color: lighten($brand-ter, 20);
+    background: white;
+
+    &:focus {
+      border-color: lighten($brand-ter, 10);
+      box-shadow: inset 0 1px 3px lighten($brand-ter, 10), 0 0 5px lighten($brand-ter, 10);
+    }
+    &:hover {
+      border-color: lighten($brand-ter, 10);
+    }
+  }
+}

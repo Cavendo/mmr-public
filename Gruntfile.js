@@ -115,7 +115,8 @@ module.exports = function (grunt) {
         httpImagesPath: '/assets/img',
         httpGeneratedImagesPath: '/assets/img/generated',
         outputStyle: 'expanded',
-        raw: 'extensions_dir = "<%= yeoman.app %>/_bower_components"\n'
+        raw: 'extensions_dir = "<%= yeoman.app %>/_bower_components"\n',
+        sourcemap: true
       },
       dist: {
         options: {
@@ -181,7 +182,10 @@ module.exports = function (grunt) {
     },
     usemin: {
       options: {
-        assetsDirs: '<%= yeoman.dist %>',
+        assetsDirs: [
+          '<%= yeoman.dist %>',
+          '<%= yeoman.dist %>/assets'
+        ],
       },
       html: ['<%= yeoman.dist %>/**/*.html'],
       css: ['<%= yeoman.dist %>/assets/css/**/*.css']
@@ -237,6 +241,24 @@ module.exports = function (grunt) {
         }]
       }
     },
+    grunticon: {
+      server: {
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.app %>/assets/svg/',
+          src: ['*.svg'],
+          dest: '.tmp/assets/'
+        }],
+        options: {
+          datapngcss: 'css/icons/data-png.css',
+          datasvgcss: 'css/icons/data-svg.css',
+          urlpngcss: 'css/icons/fallback.css',
+          pngfolder: 'img/icons/png/',
+          pngpath: 'assets/img/icons/png',
+          loadersnippet: 'js/grunticon.loader.js'
+        }
+      }
+    },
     copy: {
       dist: {
         files: [{
@@ -279,8 +301,8 @@ module.exports = function (grunt) {
           src: [
             '<%= yeoman.dist %>/assets/js/**/*.js',
             '<%= yeoman.dist %>/assets/css/**/*.css',
-            '<%= yeoman.dist %>/assets/img/**/*.{gif,jpg,jpeg,png,svg,webp}',
-            '<%= yeoman.dist %>/assets/fonts/**/*.{eot*,otf,svg,ttf,woff}'
+            // '<%= yeoman.dist %>/assets/img/**/*.{gif,jpg,jpeg,png,svg,webp}',
+            // '<%= yeoman.dist %>/assets/fonts/**/*.{eot*,otf,svg,ttf,woff}'
           ]
         }]
       }
@@ -292,7 +314,7 @@ module.exports = function (grunt) {
       },
       all: [
         'Gruntfile.js',
-        '<%= yeoman.app %>/assets/js/**/*.js',
+        '<%= yeoman.app %>/assets/js/main.js',
         'test/spec/**/*.js'
       ]
     },
@@ -303,13 +325,14 @@ module.exports = function (grunt) {
       check: {
         src: [
           '<%= yeoman.app %>/assets/css/**/*.css',
-          '<%= yeoman.app %>/assets/_scss/**/*.scss'
+          // '<%= yeoman.app %>/assets/_scss/**/*.scss'
         ]
       }
     },
     concurrent: {
       server: [
         'compass:server',
+        'grunticon:server',
         'copy:stageCss',
         'jekyll:server'
       ],
@@ -333,11 +356,6 @@ module.exports = function (grunt) {
       'connect:livereload',
       'watch'
     ]);
-  });
-
-  grunt.registerTask('server', function () {
-    grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-    grunt.task.run(['serve']);
   });
 
   // No real tests yet. Add your own.
@@ -369,7 +387,7 @@ module.exports = function (grunt) {
     'svgmin',
     'filerev',
     'usemin',
-    'htmlmin'
+    // 'htmlmin'
     ]);
 
   grunt.registerTask('default', [
