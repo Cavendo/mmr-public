@@ -5,3 +5,5 @@
 
 future: false
 show_drafts: false
+
+base_url: "//cavendo.github.io/mmr-public"
