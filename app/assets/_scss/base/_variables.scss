@@ -7,32 +7,32 @@ $base-font-family: $serif;
 $header-font-family: $sans-serif;
 
 // Font Sizes
-$base-font-size: 1em;
-$base-font-size-small: $base-font-size * 0.85;
-$h1-font-size: $base-font-size * 2.25;
-$h2-font-size: $base-font-size * 2;
-$h3-font-size: $base-font-size * 1.75;
-$h4-font-size: $base-font-size * 1.5;
-$h5-font-size: $base-font-size * 1.25;
-$h6-font-size: $base-font-size;
+$font-size-base: 1em;
+$font-size-base-small: $font-size-base * 0.85;
+$font-size-h1: $font-size-base * 2.25;
+$font-size-h2: $font-size-base * 2;
+$font-size-h3: $font-size-base * 1.75;
+$font-size-h4: $font-size-base * 1.5;
+$font-size-h5: $font-size-base * 1.25;
+$font-size-h6: $font-size-base;
 
 // Line height
-$base-line-height: 1.5;
-$header-line-height: 1.25;
+$line-height-base: 1.5;
+$line-height-header: 1.25;
 
 // Other Sizes
-$base-border-radius: 3px;
-$base-spacing: $base-line-height * 1em;
-$base-z-index: 0;
+$border-radius-base: 3px;
+$spacing-base: $line-height-base * 1em;
+$z-index-base: 0;
 
 // Colors
 $blue: #477DCA;
-$dark-gray: #333;
-$medium-gray: #999;
-$light-gray: #DDD;
-$light-red: #FBE3E4;
-$light-yellow: #FFF6BF;
-$light-green: #E6EFC2;
+$gray-dark: #333;
+$gray-medium: #999;
+$gray-light: #DDD;
+$red-light: #FBE3E4;
+$yellow-light: #FFF6BF;
+$green-light: #E6EFC2;
 
 // Brand Colors
 $smoke: rgb(139,132,117);
@@ -47,34 +47,34 @@ $brand-sec: $orange;
 $brand-ter: $smoke;
 
 // Background Color
-$base-background-color: white;
+$background-color-base: darken($brand-pri, 30);
 
 // Font Colors
-$base-font-color: darken($brand-ter, 10);
-$base-accent-color: $brand-pri;
+$font-color-base: darken($brand-ter, 10);
+$accent-color-base: $brand-pri;
 
 // Link Colors
-$base-link-color: $base-accent-color;
-$hover-link-color: darken($base-accent-color, 15);
-$base-button-color: $brand-sec;
-$hover-button-color: darken($brand-sec, 15);
+$link-color-base: $accent-color-base;
+$link-color-hover: darken($accent-color-base, 15);
+$button-color-base: $brand-sec;
+$button-color-hover: darken($brand-sec, 15);
 
 // Flash Colors
-$alert-color: $light-yellow;
-$error-color: $light-red;
-$notice-color: lighten($base-accent-color, 40);
-$success-color: $light-green;
+$color-alert: $yellow-light;
+$color-error: $red-light;
+$color-notice: lighten($accent-color-base, 40);
+$color-success: $green-light;
 
 // Border color
-$base-border-color: $light-gray;
-$base-border: 1px solid $base-border-color;
+$border-color-base: $gray-light;
+$border-base: 1px solid $border-color-base;
 
 // Forms
-$form-border-color: $light-gray;
+$form-border-color: $gray-light;
 $form-border-color-hover: darken($brand-pri, 3);
 $form-border-color-focus: $brand-pri;
 $form-border-radius: 0;
 $form-box-shadow: inset 0 1px 3px rgba(black,0.06);
 $form-box-shadow-focus: $form-box-shadow, 0 0 5px rgba(darken($form-border-color-focus, 5), 0.7);
-$form-font-size: $base-font-size;
+$form-font-size: $font-size-base;
 $form-font-family: $base-font-family;

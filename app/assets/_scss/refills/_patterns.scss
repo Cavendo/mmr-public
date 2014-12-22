@@ -1,47 +1,6 @@
 // Patterns - in alphabetical order
 
 
-// Articles
-// --------------------------
-article {
-  max-width: 40em;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 6em;
-
-  &:after {
-    content: '';
-    display: block;
-    border-bottom: 3px solid darken($smoke-white, 10);
-    width: 50px;
-    padding: 1em 0;
-  }
-
-  h1,h2,h3,h4,h5,h6 {
-    // font-family: $serif;
-  }
-
-  h1,h2,h3 {
-    margin: 1.5em 0 .5em;
-  }
-
-  .article-header {
-    margin-top: 4em;
-    margin-bottom: 3em;
-
-    .title {
-      font-size: 3em;
-      font-family: $sans-serif;
-      font-weight: 300;
-    }
-  }
-
-  ul { @extend %default-ul; }
-  ol { @extend %default-ol; }
-}
-
-
-
 // Bullets
 // --------------------------
 
@@ -280,13 +239,13 @@ article {
   }
 
   @include media($min-tablet) {
-    .title { font-size: $base-font-size * 2.75; }
-    .intro { font-size: $base-font-size * 1.15; }
+    .title { font-size: $font-size-base * 2.75; }
+    .intro { font-size: $font-size-base * 1.15; }
   }
 
   @include media($desktop) {
-    .title { font-size: $base-font-size * 3; }
-    .intro { font-size: $base-font-size * 1.25; }
+    .title { font-size: $font-size-base * 3; }
+    .intro { font-size: $font-size-base * 1.25; }
   }
 
 }

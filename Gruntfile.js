@@ -314,7 +314,6 @@ module.exports = function (grunt) {
     concurrent: {
       server: [
         'compass:server',
-        'grunticon:server',
         'copy:stageCss',
         'jekyll:server'
       ],
