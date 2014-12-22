@@ -3,8 +3,9 @@
 # 2. config.build.yml
 # 3. config.yml
 
-name: mymediaroom
+name: MyMediaRoom.com
 title: MyMediaRoom
+# url: "http://mymediaroom.com"
 description: Your Online Hub for Sharing PR and Events with the Right Audience
 author:
   name: Marty Thierry
@@ -24,6 +25,19 @@ show_drafts: true
 markdown: redcarpet
 #   extensions: ['fenced_code_blocks', 'smart']
 
-pygments: true
+highlights: true
 
+gem: ['jekyll-paginate']
+
+# Misc
 base_url: ""
+permalink: /blog/:year/:month/:day/:title
+excerpt_separator: "<!-- end excerpt -->"
+timezone: null
+humanize:
+  date_format: "%B %d, %Y"
+img_path: "http://mymediaroom.s3.amazonaws.com/blog-uploads/images"
+
+# Post Pagination
+paginate: 10
+paginate_path: blog/page/:num
