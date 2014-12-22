@@ -1,4 +1,4 @@
-MyMediaRoom.com v0.1.0
+MyMediaRoom.com v0.2.0
 ===============
 
 MyMediaRoom public site.

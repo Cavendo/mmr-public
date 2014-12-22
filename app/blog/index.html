@@ -8,11 +8,11 @@ intro: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae voluptate
 {% for post in paginator.posts %}
   <li>
     <p class="article-meta"><time>{{ post.date | naturalday }}</time></p>
-    <h3 class="article-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+    <h3 class="article-title"><a href="{{ site.base_url }}{{ post.url }}">{{ post.title }}</a></h3>
     {% if post.excerpt %}
     <p class="article-excerpt">{{ post.excerpt }}</p>
     {% endif %}
-    <div class="article-button"><a href="{{ post.url }}" class="button button-small button-outline">Continue reading &rarr;</a></div>
+    <div class="article-button"><a href="{{ site.base_url }}{{ post.url }}" class="button button-small button-outline">Continue reading &rarr;</a></div>
   </li>
 {% endfor %}
 </ol>
