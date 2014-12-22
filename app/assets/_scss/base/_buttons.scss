@@ -14,7 +14,7 @@ input[type="submit"] {
 }
 
 .button-small {
-  font-size: $base-font-size-small;
+  font-size: $font-size-base-small;
   padding: .75em .75em;
 }
 
@@ -25,4 +25,8 @@ input[type="submit"] {
 
 .button-full {
   width: 100%;
+}
+
+.button-outline {
+  @include button-variant-outline($gray-medium, $gray-light, white, $brand-pri);
 }
