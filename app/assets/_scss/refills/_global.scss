@@ -172,7 +172,7 @@ article {
     border-bottom: 3px solid darken($smoke-white, 10);
     width: 50px;
     padding: 1em 0;
-    margin-bottom: 6em;
+    margin-bottom: 3em;
   }
 }
 
@@ -187,6 +187,10 @@ article {
 .article-intro {
   font-size: $font-size-base * 1.25;
   line-height: 1.2;
+}
+
+.article-comments {
+  margin-bottom: 3em;
 }
 
 

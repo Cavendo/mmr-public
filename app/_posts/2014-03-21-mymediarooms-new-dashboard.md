@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MyMediaRoom's New Dashboard
+title: MyMediaRoom’s New Dashboard
 date: 2014-03-21
 ---
 
