@@ -34,9 +34,11 @@ base_url: ""
 permalink: /blog/:year/:month/:day/:title
 excerpt_separator: "<!-- end excerpt -->"
 timezone: null
-humanize:
-  date_format: "%B %d, %Y"
-img_path: "http://mymediaroom.s3.amazonaws.com/blog-uploads/images"
+# humanize:
+#   date_format: "%B %d, %Y"
+blog_img_path: "http://mymediaroom.s3.amazonaws.com/public/blog-uploads/img"
+base_img_path: "http://mymediaroom.s3.amazonaws.com/public/img"
+
 
 # Post Pagination
 paginate: 10

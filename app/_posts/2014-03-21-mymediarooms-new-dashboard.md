@@ -1,10 +1,10 @@
 ---
 layout: post
-title: MyMediaRoom's New Dashboard
+title: MyMediaRoom’s New Dashboard
 date: 2014-03-21
 ---
 
-![MyMediaRoom dashboard preview]({{ site.img_path }}/mmr-cp-preview.jpg)
+![MyMediaRoom dashboard preview]({{ site.blog_img_path }}/mmr-cp-preview.jpg)
 
 <!-- end excerpt -->
 
