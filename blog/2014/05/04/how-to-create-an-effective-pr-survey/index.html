@@ -11,7 +11,7 @@
 
     <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
-    <link rel="stylesheet" href="assets/css/main.0ca2.css">
+    <link rel="stylesheet" href="assets/css/main.3598.css">
 
     <script src="assets/js/head-scripts.d41d.js"></script>
 
@@ -30,7 +30,7 @@
   </div>
   <ul class="nav">
     <li><a href="//cavendo.github.io/mmr-public/blog">Blog</a></li>
-    <li><a href="#">Login</a></li>
+    <li><a href="#" class="button-modal">Log In</a></li>
     <li><a href="#" class="button button-small">Sign Up</a></li>
   </ul>
 </nav>
@@ -91,10 +91,31 @@
       </div>
     </footer>
 
+    <div id="myModal" class="reveal-modal modal">
+      <a class="close-reveal-modal modal-close-x">&#215;</a>
+      <form action="//cp.mmrdev.com/login2.aspx" method="post" class="form login-form">
+        <h3 class="form-heading">Log in</h3>
+        <div class="form-group">
+          <label for="Username">Username</label>
+          <input class="form-control" id="Username" name="Username" type="text">
+        </div>
+        <div class="form-group">
+          <label for="Password">Password</label>
+          <input class="form-control" id="Password" name="Password" type="password">
+        </div>
+        <div class="form-group-action">
+          <p class="action-support"><a href="//cp.mmrdev.com/forgotpassword.aspx">Lost Password?</a> | <a href="mailto:support@mymediaroom.com">Support</a></p>
+          <div class="action-buttons">
+            <button class="button" type="submit">Log in</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-<script>window.jQuery || document.write('<script src="//cavendo.github.io/mmr-public/_bower_components/jquery.js"><\/script>')</script>
-<script src="assets/js/main.f2e2.js"></script>
+
+<script src="assets/js/main.5926.js"></script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script>
