@@ -20,7 +20,18 @@ var App = {
   // All pages
   common: {
     init: function() {
-      // JavaScript to be fired on all pages
+
+      $('.button-modal').click(function (e) {
+        e.preventDefault();
+        $('#myModal').reveal({
+           animation: 'fade',                   //fade, fadeAndPop, none
+           animationspeed: 300,                       //how fast animtions are
+           closeonbackgroundclick: true,              //if you click background will modal close?
+           dismissmodalclass: 'close-reveal-modal'    //the class of a button or element that will close an open modal
+        });
+      });
+
+
     }
   },
   // Home page
