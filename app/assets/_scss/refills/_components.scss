@@ -1,0 +1,53 @@
+// JS Components
+
+/* -----------------------
+   Reveal Modals
+   ------------------------ */
+
+.reveal-modal-bg {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  z-index: 100;
+  display: none;
+  top: 0;
+  left: 0;
+}
+
+.reveal-modal {
+  visibility: hidden;
+  top: 100px;
+  left: 50%;
+  margin-left: -200px;
+  width: 420px;
+  background: white;
+  position: absolute;
+  z-index: 101;
+  padding: 2em 3em;
+  border-radius: 0;
+  box-shadow: 0 0 10px rgba(0,0,0,.75);
+
+  .small { width: 200px; margin-left: -140px;}
+  .medium { width: 400px; margin-left: -240px;}
+  .large  { width: 600px; margin-left: -340px;}
+  .xlarge { width: 800px; margin-left: -440px;}
+
+  .modal-close-x {
+    font-size: 2em;
+    line-height: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px 15px;
+    color: $gray-light;
+    font-weight: 100;
+    cursor: pointer;
+
+    &:hover {
+      color: $gray-medium;
+    }
+  }
+
+}
+
