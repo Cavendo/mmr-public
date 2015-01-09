@@ -42,12 +42,12 @@ select[multiple=multiple] {
   width: 100%;
 
   &:hover {
-    border-color: $form-border-color-hover;
+    // border-color: $form-border-color-hover;
   }
 
   &:focus {
     border-color: $form-border-color-focus;
-    box-shadow: $form-box-shadow-focus;
+    // box-shadow: $form-box-shadow-focus;
     outline: none;
   }
 }
@@ -75,4 +75,116 @@ select {
   margin-bottom: $spacing-base;
   max-width: 100%;
   width: auto;
+}
+
+.form {
+
+  label {
+    font-family: $sans-serif;
+    color: lighten($brand-pri, 10);
+  }
+
+  .form-control {
+    background: whitesmoke;
+    font-family: $sans-serif;
+  }
+
+  .form-group {
+    margin-bottom: .5em;
+  }
+
+  .form-group-action {
+    margin-top: 1.25em;
+  }
+
+  .button {
+    display: inline-block;
+    margin: auto;
+  }
+
+}
+
+
+
+// Signup Form
+// --------------------------
+
+.signup-form {
+  max-width: 480px;
+  margin: 0 auto 2em;
+  padding: 1.5em;
+
+  .form-group-action {
+    text-align: center;
+  }
+}
+
+.signup-form-smoke {
+  background: darken($smoke-white, 10);
+  margin-top: 2em;
+  margin-bottom: 2em;
+
+  label {
+    color: $brand-ter;
+    margin: 0;
+    padding-bottom: 5px;
+    display: block;
+  }
+
+  .form-control {
+    border-color: lighten($brand-ter, 20);
+    background: white;
+
+    &:focus {
+      border-color: lighten($brand-ter, 10);
+      box-shadow: inset 0 1px 3px lighten($brand-ter, 10), 0 0 5px lighten($brand-ter, 10);
+    }
+    &:hover {
+      border-color: lighten($brand-ter, 10);
+    }
+  }
+}
+
+
+// Login Form
+
+.login-form {
+  font-family: $sans-serif;
+
+  .reveal-modal & {
+    background: transparent;
+  }
+
+  .form-heading {
+    letter-spacing: -1px;
+    margin-bottom: 0.5em;
+    color: $brand-pri;
+  }
+
+  .form-group-action {
+    @include clearfix();
+
+    .action-support {
+      float: left;
+      font-size: $font-size-base-small;
+      padding: 0.75em 0 0;
+
+      a {
+        color: $gray-medium;
+
+        &:hover {
+          color: $brand-pri;
+        }
+      }
+    }
+
+    .action-buttons {
+      float: right;
+    }
+
+    .button-cancel {
+      @include button-variant-outline($gray-medium, transparent, $gray-dark, transparent);
+    }
+  }
+
 }
